@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /
-title: "Latest Blog Posts"
+title: ""
 ---
 
 Hai, i'm Alfan Azizi, call me by Azizi.
