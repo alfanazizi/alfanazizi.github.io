@@ -28,13 +28,13 @@ plugins:
 
 # Site owner
 owner:
-  name:
-  email:
-  twitter:
-  google:
+  name: Alfan Azizi
+  email: alfanazizi018@gmail.com  
+  twitter: twitter.com/alfanzizi
+  google: 
     ad-client:
     ad-slot:
-  bio:
+  bio: "photography, data, viz"
   avatar: bio-photo.jpg # 160x160 px image for author byline
   disqus-shortname:
 
