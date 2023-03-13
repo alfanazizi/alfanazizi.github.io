@@ -1,6 +1,12 @@
 # Site navigation links
 
-- title:
-  url:
+- title: Portofolio
+  url: /portofolio/
   excerpt:
   image:
+
+- title: Github
+  url: https://github.com/alfanazizi
+
+- title: Medium
+  url: https://medium.com/@alfanalzizi
