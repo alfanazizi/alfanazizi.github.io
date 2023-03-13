@@ -1,9 +1,7 @@
 # Site navigation links
 
-- title: Portofolio
-  url: /portofolio/
-  excerpt:
-  image:
+- title: Behance
+  url: https://www.behance.net/alfanazizi
 
 - title: Github
   url: https://github.com/alfanazizi
