@@ -5,11 +5,12 @@ img: /assets/stock-3.jpg
 img_alt: image of graduation 
 description: |
   We developed a virtual showcase for my recent work.
-tags:
+tags: 
   - Design
   - Photography
   - Catalog
   - Graduation
 ---
+#My first blog post
 
 
