@@ -8,7 +8,7 @@ export default defineConfig({});
 }
 
 {
-  site: 'https://www.alfanazizi.dev'
+  site: 'https://www.alfanazizi.github.io'
 }
 
 {
