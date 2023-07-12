@@ -1,16 +1,17 @@
 import { defineConfig } from 'astro/config';
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
-export default defineConfig({});
-
+export default defineConfig({
+  integrations: [tailwind()]
+});
 {
-  compressHTML: true
+  compressHTML: true;
 }
-
 {
-  site: 'https://www.alfanazizi.github.io'
+  site: 'https://www.alfanazizi.github.io';
 }
-
 {
-  base: '/docs'
+  base: '/docs';
 }
