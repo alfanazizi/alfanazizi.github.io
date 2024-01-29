@@ -5,5 +5,3 @@
 _____
 
 🧑‍💻 | 'journey personal websites'
-
-As a freshgraduate of Information Systems from Brawijaya University, i had a keen interest in the field of data and a strong desire to learn about data-driven careers. With a solid foundation in information systems, i have a strong understanding of how technology and systems work, allowing me to better understand data.
