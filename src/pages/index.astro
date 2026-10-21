@@ -1,28 +1,28 @@
 ---
 const profile = {
-  name: 'Alfan Azizi',
-  headline: 'Digital creator, builder, and problem-solver.',
+  name: "Alfan Aziz",
+  role: "Digital Creator",
+  headline: "Clean thinking. Sharp execution.",
   intro:
-    'I design and build clean digital experiences that feel premium, useful, and easy to trust. I care about clarity, calm visual systems, and thoughtful execution.',
-  location: 'Indonesia',
-  socialLinks: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alfan-azizi/', primary: true },
-    { label: 'Instagram', href: 'https://www.instagram.com/alfanzizi', primary: false },
-    { label: 'GitHub', href: 'https://github.com/alfanazizi', primary: false },
+    "I build digital work that feels clear, contemporary, and easy to trust. My focus sits at the intersection of design, front-end craft, and product storytelling.",
+  socials: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/alfan-azizi" },
+    { label: "Instagram", href: "https://www.instagram.com/alfanzizi" },
+    { label: "GitHub", href: "https://github.com/alfanazizi" },
   ],
-  strengths: ['Design systems', 'Front-end', 'Product thinking', 'Creative coding'],
-  repos: [
+  strengths: ["Design systems", "Front-end", "Product thinking", "Creative coding"],
+  projects: [
     {
-      name: 'alfanazizi.github.io',
-      description: 'Personal portfolio and digital presence built with Astro and GitHub Pages.',
-      url: 'https://github.com/alfanazizi/alfanazizi.github.io',
-      tags: ['Astro', 'Portfolio', 'GitHub Pages'],
+      name: "alfanazizi.github.io",
+      description: "Personal portfolio and digital presence built with Astro and GitHub Pages.",
+      tags: ["Astro", "Portfolio", "GitHub Pages"],
+      href: "https://github.com/alfanazizi/alfanazizi.github.io",
     },
     {
-      name: 'alfanazizi',
-      description: 'GitHub profile and digital identity hub.',
-      url: 'https://github.com/alfanazizi/alfanazizi',
-      tags: ['Profile', 'Identity', 'Config'],
+      name: "alfanazizi",
+      description: "GitHub profile and digital identity hub for quick access to my work.",
+      tags: ["Profile", "Identity", "Config"],
+      href: "https://github.com/alfanazizi/alfanazizi",
     },
   ],
 };
@@ -36,7 +36,7 @@ const profile = {
       name="description"
       content="Alfan Aziz is a digital creator focused on design, front-end craft, and thoughtful product experiences."
     />
-    <title>Alfan Aziz | Digital Creator</title>
+    <title>{profile.name} | {profile.role}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,92 +45,88 @@ const profile = {
       rel="stylesheet"
     />
   </head>
-
   <body>
     <div class="page-shell">
       <header class="topbar">
-        <a class="brand" href="#home" aria-label="Alfan Aziz home">A.</a>
+        <div class="brand-wrap">
+          <div class="brand-mark">A</div>
+        </div>
+
         <nav aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
-      <main id="home">
+      <main>
         <section class="hero">
           <div class="hero-copy">
-            <p class="eyebrow">Digital observer / builder / storyteller</p>
-            <h1>{profile.name}</h1>
-            <p class="headline">{profile.headline}</p>
-            <p class="intro">{profile.intro}</p>
+            <p class="eyebrow">Digital creator / builder / storyteller</p>
+            <h1>{profile.headline}</h1>
+            <p class="intro">
+              {profile.intro}
+            </p>
 
-            <div class="cta-row" aria-label="Profile links">
-              {profile.socialLinks.map((item) => (
-                <a
-                  class:list={['button', item.primary ? 'primary' : 'secondary']}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label={`Open ${item.label}`}
-                >
+            <div class="cta-row">
+              {profile.socials.map((item) => (
+                <a class="button" href={item.href} target="_blank" rel="noreferrer noopener">
                   {item.label}
                 </a>
               ))}
             </div>
 
-            <ul class="tag-list" aria-label="Core strengths">
+            <ul class="chip-list" aria-label="Core strengths">
               {profile.strengths.map((item) => <li>{item}</li>)}
             </ul>
           </div>
 
-          <div class="hero-art" aria-label="Profile illustration panel">
-            <div class="portrait">
-              <span>A</span>
-            </div>
-            <div class="mini-card">
-              <span class="mini-label">Based in</span>
-              <strong>{profile.location}</strong>
+          <div class="hero-card">
+            <div class="card-frame">
+              <div class="small-tag">PROFILE</div>
+              <div class="card-name">{profile.name}</div>
+              <div class="card-role">{profile.role}</div>
             </div>
           </div>
         </section>
 
-        <section id="about" class="info-grid" aria-labelledby="about-title">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2 id="about-title">Clean thinking. Sharp execution.</h2>
-          </div>
-
-          <div class="about-panel">
+        <section id="about" class="section-block">
+          <p class="section-label">About</p>
+          <div class="about-grid">
             <p>
-              I build digital work that feels clear, contemporary, and easy to trust. My focus sits at the intersection of design,
-              front-end development, and product storytelling.
+              I build digital work that feels clear, contemporary, and easy to trust.
+              My focus sits at the intersection of design, front-end development, and
+              product storytelling.
             </p>
             <p>
-              I enjoy turning messy ideas into polished experiences — whether that means a personal portfolio, a lightweight landing page,
-              or a visual identity that feels memorable.
+              I enjoy turning messy ideas into polished experiences — whether that means a
+              personal portfolio, a lightweight landing page, or a visual identity that
+              feels memorable.
             </p>
           </div>
         </section>
 
-        <section id="projects" class="project-section" aria-labelledby="projects-title">
-          <div class="section-heading">
-            <p class="eyebrow">Repositories</p>
-            <h2 id="projects-title">Selected work</h2>
-          </div>
+        <section id="work" class="section-block">
+          <p class="section-label">Repositories</p>
+          <h2>Selected work</h2>
 
-          <div class="project-grid">
-            {profile.repos.map((repo) => (
+          <div class="project-list">
+            {profile.projects.map((project) => (
               <article class="project-card">
-                <div class="project-topline">
-                  <span class="dot" aria-hidden="true"></span>
-                  <span>{repo.name}</span>
+                <div class="project-header">
+                  <span class="dot"></span>
+                  <span>{project.name}</span>
                 </div>
-                <p>{repo.description}</p>
-                <ul class="repo-tags" aria-label={`Tags for ${repo.name}`}>
-                  {repo.tags.map((tag) => <li>{tag}</li>)}
+
+                <p>{project.description}</p>
+
+                <ul class="tag-list">
+                  {project.tags.map((tag) => <li>{tag}</li>)}
                 </ul>
-                <a href={repo.url} target="_blank" rel="noreferrer noopener">View repository →</a>
+
+                <a class="repo-link" href={project.href} target="_blank" rel="noreferrer noopener">
+                  View repository →
+                </a>
               </article>
             ))}
           </div>
@@ -139,10 +135,17 @@ const profile = {
 
       <footer id="contact" class="site-footer">
         <p>Available for projects, collaborations, and creative conversations.</p>
-        <div class="footer-links" aria-label="Contact links">
-          <a href="https://www.linkedin.com/in/alfan-azizi/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-          <a href="https://www.instagram.com/alfanzizi" target="_blank" rel="noreferrer noopener">Instagram</a>
-          <a href="https://github.com/alfanazizi" target="_blank" rel="noreferrer noopener">GitHub</a>
+
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/alfan-azizi" target="_blank" rel="noreferrer noopener">
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/alfanzizi" target="_blank" rel="noreferrer noopener">
+            Instagram
+          </a>
+          <a href="https://github.com/alfanazizi" target="_blank" rel="noreferrer noopener">
+            GitHub
+          </a>
         </div>
       </footer>
     </div>
