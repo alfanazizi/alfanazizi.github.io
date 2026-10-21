@@ -1,0 +1,150 @@
+---
+const profile = {
+  name: 'Alfan Aziz',
+  headline: 'Digital creator, builder, and problem-solver.',
+  intro:
+    'I design and build clean digital experiences that feel premium, useful, and easy to trust. I care about clarity, calm visual systems, and thoughtful execution.',
+  location: 'Indonesia',
+  socialLinks: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alfanazizi', primary: true },
+    { label: 'Instagram', href: 'https://www.instagram.com/alfanazizi', primary: false },
+    { label: 'GitHub', href: 'https://github.com/alfanazizi', primary: false },
+  ],
+  strengths: ['Design systems', 'Front-end', 'Product thinking', 'Creative coding'],
+  repos: [
+    {
+      name: 'alfanazizi.github.io',
+      description: 'Personal portfolio and digital presence built with Astro and GitHub Pages.',
+      url: 'https://github.com/alfanazizi/alfanazizi.github.io',
+      tags: ['Astro', 'Portfolio', 'GitHub Pages'],
+    },
+    {
+      name: 'alfanazizi',
+      description: 'GitHub profile and digital identity hub.',
+      url: 'https://github.com/alfanazizi/alfanazizi',
+      tags: ['Profile', 'Identity', 'Config'],
+    },
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Alfan Aziz is a digital creator focused on design, front-end craft, and thoughtful product experiences."
+    />
+    <title>Alfan Aziz | Digital Creator</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Alfan Aziz home">A.</a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Digital observer / builder / storyteller</p>
+            <h1>{profile.name}</h1>
+            <p class="headline">{profile.headline}</p>
+            <p class="intro">{profile.intro}</p>
+
+            <div class="cta-row" aria-label="Profile links">
+              {profile.socialLinks.map((item) => (
+                <a
+                  class:list={['button', item.primary ? 'primary' : 'secondary']}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`Open ${item.label}`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            <ul class="tag-list" aria-label="Core strengths">
+              {profile.strengths.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+
+          <div class="hero-art" aria-label="Profile illustration panel">
+            <div class="portrait">
+              <span>A</span>
+            </div>
+            <div class="mini-card">
+              <span class="mini-label">Based in</span>
+              <strong>{profile.location}</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="info-grid" aria-labelledby="about-title">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">Clean thinking. Sharp execution.</h2>
+          </div>
+
+          <div class="about-panel">
+            <p>
+              I build digital work that feels clear, contemporary, and easy to trust. My focus sits at the intersection of design,
+              front-end development, and product storytelling.
+            </p>
+            <p>
+              I enjoy turning messy ideas into polished experiences — whether that means a personal portfolio, a lightweight landing page,
+              or a visual identity that feels memorable.
+            </p>
+          </div>
+        </section>
+
+        <section id="projects" class="project-section" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <p class="eyebrow">Repositories</p>
+            <h2 id="projects-title">Selected work</h2>
+          </div>
+
+          <div class="project-grid">
+            {profile.repos.map((repo) => (
+              <article class="project-card">
+                <div class="project-topline">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>{repo.name}</span>
+                </div>
+                <p>{repo.description}</p>
+                <ul class="repo-tags" aria-label={`Tags for ${repo.name}`}>
+                  {repo.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+                <a href={repo.url} target="_blank" rel="noreferrer noopener">View repository →</a>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="site-footer">
+        <p>Available for projects, collaborations, and creative conversations.</p>
+        <div class="footer-links" aria-label="Contact links">
+          <a href="https://www.linkedin.com/in/alfanazizi" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/alfanazizi" target="_blank" rel="noreferrer noopener">Instagram</a>
+          <a href="https://github.com/alfanazizi" target="_blank" rel="noreferrer noopener">GitHub</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
